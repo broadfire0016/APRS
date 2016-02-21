@@ -274,7 +274,7 @@ Partial Class Employees
         Me.EmployeeBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.EmployeeBindingNavigator.Name = "EmployeeBindingNavigator"
         Me.EmployeeBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.EmployeeBindingNavigator.Size = New System.Drawing.Size(584, 25)
+        Me.EmployeeBindingNavigator.Size = New System.Drawing.Size(595, 25)
         Me.EmployeeBindingNavigator.TabIndex = 0
         Me.EmployeeBindingNavigator.Text = "BindingNavigator1"
         '
@@ -462,7 +462,7 @@ Partial Class Employees
         'Emp_tinTextBox
         '
         Me.Emp_tinTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "emp_tin", True))
-        Me.Emp_tinTextBox.Location = New System.Drawing.Point(265, 297)
+        Me.Emp_tinTextBox.Location = New System.Drawing.Point(262, 297)
         Me.Emp_tinTextBox.Name = "Emp_tinTextBox"
         Me.Emp_tinTextBox.Size = New System.Drawing.Size(104, 20)
         Me.Emp_tinTextBox.TabIndex = 32
@@ -588,7 +588,7 @@ Partial Class Employees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(584, 596)
+        Me.ClientSize = New System.Drawing.Size(595, 596)
         Me.Controls.Add(Me.UltraButton1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Emp_photoPictureBox)
