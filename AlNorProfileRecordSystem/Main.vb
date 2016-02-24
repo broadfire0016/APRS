@@ -10,4 +10,8 @@
     Private Sub ContractsBtn_Click(sender As Object, e As EventArgs) Handles ContractsBtn.Click
         Contracts.Show()
     End Sub
+
+    Private Sub InfracBtn_Click(sender As Object, e As EventArgs) Handles InfracBtn.Click
+        Infractions.Show()
+    End Sub
 End Class

@@ -1686,8 +1686,7 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columninf_remarks)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columninf_ID}, true))
             Me.columninf_ID.AutoIncrement = true
-            Me.columninf_ID.AutoIncrementSeed = -1
-            Me.columninf_ID.AutoIncrementStep = -1
+            Me.columninf_ID.AutoIncrementSeed = 1
             Me.columninf_ID.AllowDBNull = false
             Me.columninf_ID.Unique = true
             Me.columninf_description.MaxLength = 255

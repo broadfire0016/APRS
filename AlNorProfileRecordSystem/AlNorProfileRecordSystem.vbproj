@@ -141,6 +141,9 @@
     <EmbeddedResource Include="Employees.resx">
       <DependentUpon>Employees.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Infractions.resx">
+      <DependentUpon>Infractions.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
