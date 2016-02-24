@@ -528,8 +528,7 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columncon_ends)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncon_ID}, true))
             Me.columncon_ID.AutoIncrement = true
-            Me.columncon_ID.AutoIncrementSeed = -1
-            Me.columncon_ID.AutoIncrementStep = -1
+            Me.columncon_ID.AutoIncrementSeed = 1
             Me.columncon_ID.AllowDBNull = false
             Me.columncon_ID.Unique = true
             Me.columncon_starts.MaxLength = 255

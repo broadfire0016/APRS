@@ -50,6 +50,7 @@
     <Reference Include="Infragistics4.Shared.v15.2, Version=15.2.20152.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.Misc.v15.2, Version=15.2.20152.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinEditors.v15.2, Version=15.2.20152.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v15.2, Version=15.2.20152.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.v15.2, Version=15.2.20152.2023, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -83,6 +84,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AlnorEmpDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts.Designer.vb">
+      <DependentUpon>Contracts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Department.Designer.vb">
       <DependentUpon>Department.vb</DependentUpon>
@@ -119,6 +126,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Contracts.resx">
+      <DependentUpon>Contracts.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Department.resx">
       <DependentUpon>Department.vb</DependentUpon>
     </EmbeddedResource>
