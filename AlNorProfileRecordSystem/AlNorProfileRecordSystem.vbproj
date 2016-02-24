@@ -103,6 +103,12 @@
     <Compile Include="Employees.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Infractions.Designer.vb">
+      <DependentUpon>Infractions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Infractions.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
     </Compile>
