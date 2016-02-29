@@ -75,6 +75,8 @@ Partial Class Infractions
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.InfractionsBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.InfractionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AlnorEmpDataSet = New AlNorProfileRecordSystem.AlnorEmpDataSet()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
@@ -87,23 +89,21 @@ Partial Class Infractions
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.InfractionsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.InfractionsDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Inf_IDLabel1 = New System.Windows.Forms.Label()
         Me.Emp_idLabel1 = New System.Windows.Forms.Label()
         Me.Inf_descriptionLabel1 = New System.Windows.Forms.Label()
         Me.Inf_dateLabel1 = New System.Windows.Forms.Label()
         Me.Inf_remarksLabel1 = New System.Windows.Forms.Label()
         Me.UltraCombo1 = New Infragistics.Win.UltraWinGrid.UltraCombo()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AlnorEmpDataSet = New AlNorProfileRecordSystem.AlnorEmpDataSet()
-        Me.InfractionsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InfractionsTableAdapter = New AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.InfractionsTableAdapter()
         Me.TableAdapterManager = New AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.TableAdapterManager()
         Me.EmployeeTableAdapter = New AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.EmployeeTableAdapter()
@@ -114,11 +114,11 @@ Partial Class Infractions
         Inf_remarksLabel = New System.Windows.Forms.Label()
         CType(Me.InfractionsBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.InfractionsBindingNavigator.SuspendLayout()
+        CType(Me.InfractionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AlnorEmpDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.InfractionsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraCombo1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AlnorEmpDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.InfractionsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Inf_IDLabel
@@ -192,6 +192,16 @@ Partial Class Infractions
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'InfractionsBindingSource
+        '
+        Me.InfractionsBindingSource.DataMember = "Infractions"
+        Me.InfractionsBindingSource.DataSource = Me.AlnorEmpDataSet
+        '
+        'AlnorEmpDataSet
+        '
+        Me.AlnorEmpDataSet.DataSetName = "AlnorEmpDataSet"
+        Me.AlnorEmpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'BindingNavigatorCountItem
         '
@@ -290,6 +300,46 @@ Partial Class Infractions
         Me.InfractionsDataGridView.ReadOnly = True
         Me.InfractionsDataGridView.Size = New System.Drawing.Size(543, 220)
         Me.InfractionsDataGridView.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "inf_ID"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "inf_ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "emp_id"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "emp_id"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Visible = False
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "inf_description"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Description"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "inf_date"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Date Recorded"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "inf_remarks"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Remarks"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'Inf_IDLabel1
         '
@@ -447,6 +497,11 @@ Partial Class Infractions
         Me.UltraCombo1.TabIndex = 12
         Me.UltraCombo1.ValueMember = "emp_id"
         '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.AlnorEmpDataSet
+        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(51, 159)
@@ -467,61 +522,6 @@ Partial Class Infractions
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(200, 20)
         Me.TextBox2.TabIndex = 15
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.AlnorEmpDataSet
-        '
-        'AlnorEmpDataSet
-        '
-        Me.AlnorEmpDataSet.DataSetName = "AlnorEmpDataSet"
-        Me.AlnorEmpDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'InfractionsBindingSource
-        '
-        Me.InfractionsBindingSource.DataMember = "Infractions"
-        Me.InfractionsBindingSource.DataSource = Me.AlnorEmpDataSet
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "inf_ID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "inf_ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "emp_id"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "emp_id"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Visible = False
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "inf_description"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Description"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "inf_date"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Date Recorded"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "inf_remarks"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Remarks"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'InfractionsTableAdapter
         '
@@ -561,16 +561,20 @@ Partial Class Infractions
         Me.Controls.Add(Inf_remarksLabel)
         Me.Controls.Add(Me.Inf_remarksLabel1)
         Me.Controls.Add(Me.InfractionsBindingNavigator)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(636, 576)
+        Me.MinimumSize = New System.Drawing.Size(636, 576)
         Me.Name = "Infractions"
         Me.Text = "Infractions"
         CType(Me.InfractionsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.InfractionsBindingNavigator.ResumeLayout(False)
         Me.InfractionsBindingNavigator.PerformLayout()
+        CType(Me.InfractionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AlnorEmpDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InfractionsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraCombo1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AlnorEmpDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.InfractionsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

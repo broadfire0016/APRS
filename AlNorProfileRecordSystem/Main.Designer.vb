@@ -29,11 +29,12 @@ Partial Class Main
         Me.ReportsBtn = New Infragistics.Win.Misc.UltraButton()
         Me.UltraPictureBox1 = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.InfracBtn = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraPictureBox2 = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.SuspendLayout()
         '
         'DeptBtn
         '
-        Me.DeptBtn.Location = New System.Drawing.Point(36, 262)
+        Me.DeptBtn.Location = New System.Drawing.Point(35, 306)
         Me.DeptBtn.Name = "DeptBtn"
         Me.DeptBtn.Size = New System.Drawing.Size(104, 67)
         Me.DeptBtn.TabIndex = 0
@@ -41,7 +42,7 @@ Partial Class Main
         '
         'EmpBtn
         '
-        Me.EmpBtn.Location = New System.Drawing.Point(36, 335)
+        Me.EmpBtn.Location = New System.Drawing.Point(35, 379)
         Me.EmpBtn.Name = "EmpBtn"
         Me.EmpBtn.Size = New System.Drawing.Size(104, 67)
         Me.EmpBtn.TabIndex = 1
@@ -49,7 +50,7 @@ Partial Class Main
         '
         'ContractsBtn
         '
-        Me.ContractsBtn.Location = New System.Drawing.Point(224, 262)
+        Me.ContractsBtn.Location = New System.Drawing.Point(223, 306)
         Me.ContractsBtn.Name = "ContractsBtn"
         Me.ContractsBtn.Size = New System.Drawing.Size(104, 67)
         Me.ContractsBtn.TabIndex = 2
@@ -57,7 +58,7 @@ Partial Class Main
         '
         'ReportsBtn
         '
-        Me.ReportsBtn.Location = New System.Drawing.Point(412, 262)
+        Me.ReportsBtn.Location = New System.Drawing.Point(411, 306)
         Me.ReportsBtn.Name = "ReportsBtn"
         Me.ReportsBtn.Size = New System.Drawing.Size(104, 67)
         Me.ReportsBtn.TabIndex = 3
@@ -65,36 +66,52 @@ Partial Class Main
         '
         'UltraPictureBox1
         '
-        Me.UltraPictureBox1.BorderShadowColor = System.Drawing.Color.Empty
-        Me.UltraPictureBox1.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.UltraPictureBox1.BorderShadowColor = System.Drawing.Color.Transparent
         Me.UltraPictureBox1.Image = CType(resources.GetObject("UltraPictureBox1.Image"), Object)
-        Me.UltraPictureBox1.Location = New System.Drawing.Point(161, 94)
+        Me.UltraPictureBox1.Location = New System.Drawing.Point(155, 40)
         Me.UltraPictureBox1.Name = "UltraPictureBox1"
         Me.UltraPictureBox1.Size = New System.Drawing.Size(230, 129)
         Me.UltraPictureBox1.TabIndex = 4
         '
         'InfracBtn
         '
-        Me.InfracBtn.Location = New System.Drawing.Point(224, 335)
+        Me.InfracBtn.Location = New System.Drawing.Point(223, 379)
         Me.InfracBtn.Name = "InfracBtn"
         Me.InfracBtn.Size = New System.Drawing.Size(104, 67)
         Me.InfracBtn.TabIndex = 5
         Me.InfracBtn.Text = "Manage Infractions"
         '
+        'UltraPictureBox2
+        '
+        Me.UltraPictureBox2.AutoSize = True
+        Me.UltraPictureBox2.BorderShadowColor = System.Drawing.Color.Transparent
+        Me.UltraPictureBox2.Image = CType(resources.GetObject("UltraPictureBox2.Image"), Object)
+        Me.UltraPictureBox2.Location = New System.Drawing.Point(47, 157)
+        Me.UltraPictureBox2.Name = "UltraPictureBox2"
+        Me.UltraPictureBox2.Size = New System.Drawing.Size(468, 60)
+        Me.UltraPictureBox2.TabIndex = 6
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.SkyBlue
         Me.ClientSize = New System.Drawing.Size(561, 498)
-        Me.Controls.Add(Me.InfracBtn)
         Me.Controls.Add(Me.UltraPictureBox1)
+        Me.Controls.Add(Me.UltraPictureBox2)
+        Me.Controls.Add(Me.InfracBtn)
         Me.Controls.Add(Me.ReportsBtn)
         Me.Controls.Add(Me.ContractsBtn)
         Me.Controls.Add(Me.EmpBtn)
         Me.Controls.Add(Me.DeptBtn)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(577, 537)
+        Me.MinimumSize = New System.Drawing.Size(577, 537)
         Me.Name = "Main"
         Me.Text = "Main"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -104,4 +121,5 @@ Partial Class Main
     Friend WithEvents ReportsBtn As Infragistics.Win.Misc.UltraButton
     Friend WithEvents UltraPictureBox1 As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents InfracBtn As Infragistics.Win.Misc.UltraButton
+    Friend WithEvents UltraPictureBox2 As Infragistics.Win.UltraWinEditors.UltraPictureBox
 End Class

@@ -13,6 +13,9 @@
         'TODO: This line of code loads data into the 'AlnorEmpDataSet.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.Fill(Me.AlnorEmpDataSet.Employee)
         ComboBox1.SelectedValue = Dept_idLabel1.Text
+
+        Emp_bdayDateTimePicker.Format = DateTimePickerFormat.Custom
+        Emp_bdayDateTimePicker.CustomFormat = "ddd','MMM'/'dd'/'yyyy"
     End Sub
 
     Private Sub UltraButton1_Click(sender As Object, e As EventArgs) Handles UltraButton1.Click
@@ -32,5 +35,9 @@
         Catch ex As Exception
             ComboBox1.SelectedValue = 0
         End Try
+    End Sub
+
+    Private Sub Employees_MouseMove(sender As Object, e As EventArgs) Handles Me.MouseMove
+        Emp_bdayLabel2.Text = Emp_bdayDateTimePicker.Text
     End Sub
 End Class

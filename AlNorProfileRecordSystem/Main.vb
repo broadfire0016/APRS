@@ -14,4 +14,8 @@
     Private Sub InfracBtn_Click(sender As Object, e As EventArgs) Handles InfracBtn.Click
         Infractions.Show()
     End Sub
+
+    Private Sub ReportsBtn_Click(sender As Object, e As EventArgs) Handles ReportsBtn.Click
+        Reports.Show()
+    End Sub
 End Class

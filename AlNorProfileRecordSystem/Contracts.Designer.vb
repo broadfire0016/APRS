@@ -54,6 +54,11 @@ Partial Class Contracts
         Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_starts")
         Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_ends")
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("EmployeeInfractions", 0)
+        Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_ID")
+        Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
+        Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_description")
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_date")
+        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_remarks")
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -353,6 +358,12 @@ Partial Class Contracts
         UltraGridColumn22.Header.VisiblePosition = 2
         UltraGridColumn23.Header.VisiblePosition = 3
         UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23})
+        UltraGridColumn25.Header.VisiblePosition = 0
+        UltraGridColumn26.Header.VisiblePosition = 1
+        UltraGridColumn27.Header.VisiblePosition = 2
+        UltraGridColumn28.Header.VisiblePosition = 3
+        UltraGridColumn29.Header.VisiblePosition = 4
+        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29})
         Me.UltraCombo1.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.UltraCombo1.DisplayLayout.BandsSerializer.Add(UltraGridBand2)
         Me.UltraCombo1.DisplayLayout.BandsSerializer.Add(UltraGridBand3)
@@ -527,6 +538,7 @@ Partial Class Contracts
         Me.Controls.Add(Emp_idLabel)
         Me.Controls.Add(Me.Con_startsLabel1)
         Me.Controls.Add(Me.Con_endsLabel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Contracts"
         Me.Text = "Contracts"
         CType(Me.ContractsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

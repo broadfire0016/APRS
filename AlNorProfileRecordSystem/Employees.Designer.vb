@@ -78,6 +78,7 @@ Partial Class Employees
         Me.Dept_idLabel1 = New System.Windows.Forms.Label()
         Me.UltraButton1 = New Infragistics.Win.Misc.UltraButton()
         Me.DepartmentTableAdapter = New AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.DepartmentTableAdapter()
+        Me.Emp_bdayLabel2 = New System.Windows.Forms.Label()
         Emp_numLabel = New System.Windows.Forms.Label()
         Emp_lnameLabel = New System.Windows.Forms.Label()
         Emp_fnameLabel = New System.Windows.Forms.Label()
@@ -258,6 +259,7 @@ Partial Class Employees
         Me.TableAdapterManager.ContractsTableAdapter = Nothing
         Me.TableAdapterManager.DepartmentTableAdapter = Nothing
         Me.TableAdapterManager.EmployeeTableAdapter = Me.EmployeeTableAdapter
+        Me.TableAdapterManager.InfractionsTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'EmployeeBindingNavigator
@@ -274,7 +276,7 @@ Partial Class Employees
         Me.EmployeeBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.EmployeeBindingNavigator.Name = "EmployeeBindingNavigator"
         Me.EmployeeBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.EmployeeBindingNavigator.Size = New System.Drawing.Size(595, 25)
+        Me.EmployeeBindingNavigator.Size = New System.Drawing.Size(604, 25)
         Me.EmployeeBindingNavigator.TabIndex = 0
         Me.EmployeeBindingNavigator.Text = "BindingNavigator1"
         '
@@ -584,15 +586,29 @@ Partial Class Employees
         '
         Me.DepartmentTableAdapter.ClearBeforeFill = True
         '
+        'Emp_bdayLabel2
+        '
+        Me.Emp_bdayLabel2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "emp_bday", True))
+        Me.Emp_bdayLabel2.Location = New System.Drawing.Point(183, 231)
+        Me.Emp_bdayLabel2.Name = "Emp_bdayLabel2"
+        Me.Emp_bdayLabel2.Size = New System.Drawing.Size(100, 23)
+        Me.Emp_bdayLabel2.TabIndex = 42
+        Me.Emp_bdayLabel2.Text = "Label1"
+        '
         'Employees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(595, 596)
+        Me.ClientSize = New System.Drawing.Size(604, 608)
         Me.Controls.Add(Me.UltraButton1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Emp_photoPictureBox)
         Me.Controls.Add(Me.EmployeeBindingNavigator)
+        Me.Controls.Add(Me.Emp_bdayLabel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(620, 647)
+        Me.MinimumSize = New System.Drawing.Size(620, 647)
         Me.Name = "Employees"
         Me.Text = "Employees"
         CType(Me.AlnorEmpDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -648,4 +664,5 @@ Partial Class Employees
     Friend WithEvents DepartmentBindingSource As BindingSource
     Friend WithEvents DepartmentTableAdapter As AlnorEmpDataSetTableAdapters.DepartmentTableAdapter
     Friend WithEvents Dept_idLabel1 As Label
+    Friend WithEvents Emp_bdayLabel2 As Label
 End Class
