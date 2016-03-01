@@ -56,6 +56,7 @@ Partial Class Employees
         Dim UltraGridColumn42 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_mobile")
         Dim UltraGridColumn43 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_sss")
         Dim UltraGridColumn44 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_phealth")
+        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_pagibig")
         Dim UltraGridColumn45 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_tin")
         Dim UltraGridColumn46 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_photo")
         Dim UltraGridColumn47 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_resign")
@@ -83,6 +84,7 @@ Partial Class Employees
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Emp_pagibigLabel As System.Windows.Forms.Label
         Me.AlnorEmpDataSet = New AlNorProfileRecordSystem.AlnorEmpDataSet()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.EmployeeTableAdapter()
@@ -128,6 +130,7 @@ Partial Class Employees
         Me.UltraCombo1 = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Emp_idLabel1 = New System.Windows.Forms.Label()
+        Me.Emp_pagibigTextBox = New System.Windows.Forms.TextBox()
         Emp_numLabel = New System.Windows.Forms.Label()
         Emp_lnameLabel = New System.Windows.Forms.Label()
         Emp_fnameLabel = New System.Windows.Forms.Label()
@@ -143,6 +146,7 @@ Partial Class Employees
         Emp_sssLabel = New System.Windows.Forms.Label()
         Emp_phealthLabel = New System.Windows.Forms.Label()
         Emp_tinLabel = New System.Windows.Forms.Label()
+        Emp_pagibigLabel = New System.Windows.Forms.Label()
         CType(Me.AlnorEmpDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -561,6 +565,8 @@ Partial Class Employees
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Emp_pagibigLabel)
+        Me.GroupBox1.Controls.Add(Me.Emp_pagibigTextBox)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Emp_tinTextBox)
         Me.GroupBox1.Controls.Add(Me.Emp_resignCheckBox)
@@ -595,7 +601,7 @@ Partial Class Employees
         Me.GroupBox1.Controls.Add(Me.Dept_idLabel1)
         Me.GroupBox1.Location = New System.Drawing.Point(26, 217)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(558, 371)
+        Me.GroupBox1.Size = New System.Drawing.Size(559, 371)
         Me.GroupBox1.TabIndex = 40
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Details"
@@ -702,15 +708,16 @@ Partial Class Employees
         UltraGridColumn43.Hidden = True
         UltraGridColumn44.Header.VisiblePosition = 14
         UltraGridColumn44.Hidden = True
-        UltraGridColumn45.Header.VisiblePosition = 15
+        UltraGridColumn1.Header.VisiblePosition = 15
+        UltraGridColumn45.Header.VisiblePosition = 16
         UltraGridColumn45.Hidden = True
-        UltraGridColumn46.Header.VisiblePosition = 16
+        UltraGridColumn46.Header.VisiblePosition = 17
         UltraGridColumn46.Hidden = True
-        UltraGridColumn47.Header.VisiblePosition = 17
+        UltraGridColumn47.Header.VisiblePosition = 18
         UltraGridColumn47.Hidden = True
-        UltraGridColumn48.Header.VisiblePosition = 18
-        UltraGridColumn49.Header.VisiblePosition = 19
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49})
+        UltraGridColumn48.Header.VisiblePosition = 19
+        UltraGridColumn49.Header.VisiblePosition = 20
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn1, UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49})
         UltraGridColumn50.Header.VisiblePosition = 0
         UltraGridColumn51.Header.VisiblePosition = 1
         UltraGridColumn52.Header.VisiblePosition = 2
@@ -800,10 +807,28 @@ Partial Class Employees
         Me.Emp_idLabel1.TabIndex = 44
         Me.Emp_idLabel1.Text = "Label1"
         '
+        'Emp_pagibigLabel
+        '
+        Emp_pagibigLabel.AutoSize = True
+        Emp_pagibigLabel.Location = New System.Drawing.Point(394, 281)
+        Emp_pagibigLabel.Name = "Emp_pagibigLabel"
+        Emp_pagibigLabel.Size = New System.Drawing.Size(56, 13)
+        Emp_pagibigLabel.TabIndex = 40
+        Emp_pagibigLabel.Text = "PAG-IBIG:"
+        '
+        'Emp_pagibigTextBox
+        '
+        Me.Emp_pagibigTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "emp_pagibig", True))
+        Me.Emp_pagibigTextBox.Location = New System.Drawing.Point(397, 297)
+        Me.Emp_pagibigTextBox.Name = "Emp_pagibigTextBox"
+        Me.Emp_pagibigTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Emp_pagibigTextBox.TabIndex = 41
+        '
         'Employees
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.BurlyWood
         Me.ClientSize = New System.Drawing.Size(604, 608)
         Me.Controls.Add(Me.GroupBox1)
@@ -882,4 +907,5 @@ Partial Class Employees
     Friend WithEvents UltraCombo1 As Infragistics.Win.UltraWinGrid.UltraCombo
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents Emp_idLabel1 As Label
+    Friend WithEvents Emp_pagibigTextBox As TextBox
 End Class

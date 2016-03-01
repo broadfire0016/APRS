@@ -568,7 +568,8 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columncon_ends)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncon_ID}, true))
             Me.columncon_ID.AutoIncrement = true
-            Me.columncon_ID.AutoIncrementSeed = 1
+            Me.columncon_ID.AutoIncrementSeed = -1
+            Me.columncon_ID.AutoIncrementStep = -1
             Me.columncon_ID.AllowDBNull = false
             Me.columncon_ID.Unique = true
             Me.columncon_starts.MaxLength = 255
@@ -846,7 +847,8 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columndept_name)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columndept_id}, true))
             Me.columndept_id.AutoIncrement = true
-            Me.columndept_id.AutoIncrementSeed = 1
+            Me.columndept_id.AutoIncrementSeed = -1
+            Me.columndept_id.AutoIncrementStep = -1
             Me.columndept_id.AllowDBNull = false
             Me.columndept_id.Unique = true
             Me.columndept_name.MaxLength = 255
@@ -1017,6 +1019,8 @@ Partial Public Class AlnorEmpDataSet
         
         Private columnemp_phealth As Global.System.Data.DataColumn
         
+        Private columnemp_pagibig As Global.System.Data.DataColumn
+        
         Private columnemp_tin As Global.System.Data.DataColumn
         
         Private columnemp_photo As Global.System.Data.DataColumn
@@ -1180,6 +1184,14 @@ Partial Public Class AlnorEmpDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property emp_pagibigColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnemp_pagibig
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property emp_tinColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnemp_tin
@@ -1254,11 +1266,12 @@ Partial Public Class AlnorEmpDataSet
                     ByVal emp_mobile As String,  _
                     ByVal emp_sss As String,  _
                     ByVal emp_phealth As String,  _
+                    ByVal emp_pagibig As String,  _
                     ByVal emp_tin As String,  _
                     ByVal emp_photo() As Byte,  _
                     ByVal emp_resign As Boolean) As EmployeeRow
             Dim rowEmployeeRow As EmployeeRow = CType(Me.NewRow,EmployeeRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, emp_num, emp_lname, emp_fname, emp_mname, emp_position, Nothing, emp_address, emp_gender, emp_bday, emp_religion, emp_educ, emp_mobile, emp_sss, emp_phealth, emp_tin, emp_photo, emp_resign}
+            Dim columnValuesArray() As Object = New Object() {Nothing, emp_num, emp_lname, emp_fname, emp_mname, emp_position, Nothing, emp_address, emp_gender, emp_bday, emp_religion, emp_educ, emp_mobile, emp_sss, emp_phealth, emp_pagibig, emp_tin, emp_photo, emp_resign}
             If (Not (parentDepartmentRowByDepartmentEmployee) Is Nothing) Then
                 columnValuesArray(6) = parentDepartmentRowByDepartmentEmployee(0)
             End If
@@ -1305,6 +1318,7 @@ Partial Public Class AlnorEmpDataSet
             Me.columnemp_mobile = MyBase.Columns("emp_mobile")
             Me.columnemp_sss = MyBase.Columns("emp_sss")
             Me.columnemp_phealth = MyBase.Columns("emp_phealth")
+            Me.columnemp_pagibig = MyBase.Columns("emp_pagibig")
             Me.columnemp_tin = MyBase.Columns("emp_tin")
             Me.columnemp_photo = MyBase.Columns("emp_photo")
             Me.columnemp_resign = MyBase.Columns("emp_resign")
@@ -1343,6 +1357,8 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columnemp_sss)
             Me.columnemp_phealth = New Global.System.Data.DataColumn("emp_phealth", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnemp_phealth)
+            Me.columnemp_pagibig = New Global.System.Data.DataColumn("emp_pagibig", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnemp_pagibig)
             Me.columnemp_tin = New Global.System.Data.DataColumn("emp_tin", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnemp_tin)
             Me.columnemp_photo = New Global.System.Data.DataColumn("emp_photo", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
@@ -1351,7 +1367,8 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columnemp_resign)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnemp_id}, true))
             Me.columnemp_id.AutoIncrement = true
-            Me.columnemp_id.AutoIncrementSeed = 1
+            Me.columnemp_id.AutoIncrementSeed = -1
+            Me.columnemp_id.AutoIncrementStep = -1
             Me.columnemp_id.AllowDBNull = false
             Me.columnemp_id.Unique = true
             Me.columnemp_num.MaxLength = 255
@@ -1367,6 +1384,7 @@ Partial Public Class AlnorEmpDataSet
             Me.columnemp_mobile.MaxLength = 255
             Me.columnemp_sss.MaxLength = 255
             Me.columnemp_phealth.MaxLength = 255
+            Me.columnemp_pagibig.MaxLength = 255
             Me.columnemp_tin.MaxLength = 255
         End Sub
         
@@ -1683,7 +1701,8 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columninf_remarks)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columninf_ID}, true))
             Me.columninf_ID.AutoIncrement = true
-            Me.columninf_ID.AutoIncrementSeed = 1
+            Me.columninf_ID.AutoIncrementSeed = -1
+            Me.columninf_ID.AutoIncrementStep = -1
             Me.columninf_ID.AllowDBNull = false
             Me.columninf_ID.Unique = true
             Me.columninf_description.MaxLength = 255
@@ -2239,6 +2258,21 @@ Partial Public Class AlnorEmpDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property emp_pagibig() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableEmployee.emp_pagibigColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'emp_pagibig' in table 'Employee' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableEmployee.emp_pagibigColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property emp_tin() As String
             Get
                 Try 
@@ -2459,6 +2493,18 @@ Partial Public Class AlnorEmpDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setemp_phealthNull()
             Me(Me.tableEmployee.emp_phealthColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isemp_pagibigNull() As Boolean
+            Return Me.IsNull(Me.tableEmployee.emp_pagibigColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setemp_pagibigNull()
+            Me(Me.tableEmployee.emp_pagibigColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3638,6 +3684,7 @@ Namespace AlnorEmpDataSetTableAdapters
             tableMapping.ColumnMappings.Add("emp_mobile", "emp_mobile")
             tableMapping.ColumnMappings.Add("emp_sss", "emp_sss")
             tableMapping.ColumnMappings.Add("emp_phealth", "emp_phealth")
+            tableMapping.ColumnMappings.Add("emp_pagibig", "emp_pagibig")
             tableMapping.ColumnMappings.Add("emp_tin", "emp_tin")
             tableMapping.ColumnMappings.Add("emp_photo", "emp_photo")
             tableMapping.ColumnMappings.Add("emp_resign", "emp_resign")
@@ -3655,8 +3702,9 @@ Namespace AlnorEmpDataSetTableAdapters
                 ") AND ((? = 1 AND `emp_educ` IS NULL) OR (`emp_educ` = ?)) AND ((? = 1 AND `emp_"& _ 
                 "mobile` IS NULL) OR (`emp_mobile` = ?)) AND ((? = 1 AND `emp_sss` IS NULL) OR (`"& _ 
                 "emp_sss` = ?)) AND ((? = 1 AND `emp_phealth` IS NULL) OR (`emp_phealth` = ?)) AN"& _ 
-                "D ((? = 1 AND `emp_tin` IS NULL) OR (`emp_tin` = ?)) AND ((? = 1 AND `emp_resign"& _ 
-                "` IS NULL) OR (`emp_resign` = ?)))"
+                "D ((? = 1 AND `emp_pagibig` IS NULL) OR (`emp_pagibig` = ?)) AND ((? = 1 AND `em"& _ 
+                "p_tin` IS NULL) OR (`emp_tin` = ?)) AND ((? = 1 AND `emp_resign` IS NULL) OR (`e"& _ 
+                "mp_resign` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_id", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_id", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_num", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_num", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -3687,6 +3735,8 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_sss", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_sss", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_phealth", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_phealth", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_phealth", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_phealth", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_pagibig", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_pagibig", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_pagibig", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_pagibig", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_tin", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_tin", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_tin", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_tin", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_resign", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_resign", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -3695,8 +3745,9 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Employee` (`emp_num`, `emp_lname`, `emp_fname`, `emp_mname`, `emp_po"& _ 
                 "sition`, `dept_id`, `emp_address`, `emp_gender`, `emp_bday`, `emp_religion`, `em"& _ 
-                "p_educ`, `emp_mobile`, `emp_sss`, `emp_phealth`, `emp_tin`, `emp_photo`, `emp_re"& _ 
-                "sign`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                "p_educ`, `emp_mobile`, `emp_sss`, `emp_phealth`, `emp_pagibig`, `emp_tin`, `emp_"& _ 
+                "photo`, `emp_resign`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"& _ 
+                " ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_num", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_num", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_lname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_lname", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -3712,6 +3763,7 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_mobile", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_mobile", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_sss", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_sss", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_phealth", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_phealth", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_pagibig", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_pagibig", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_tin", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_tin", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_photo", Global.System.Data.OleDb.OleDbType.LongVarBinary, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_photo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_resign", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_resign", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -3720,20 +3772,21 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Employee` SET `emp_num` = ?, `emp_lname` = ?, `emp_fname` = ?, `emp_mname"& _ 
                 "` = ?, `emp_position` = ?, `dept_id` = ?, `emp_address` = ?, `emp_gender` = ?, `"& _ 
                 "emp_bday` = ?, `emp_religion` = ?, `emp_educ` = ?, `emp_mobile` = ?, `emp_sss` ="& _ 
-                " ?, `emp_phealth` = ?, `emp_tin` = ?, `emp_photo` = ?, `emp_resign` = ? WHERE (("& _ 
-                "`emp_id` = ?) AND ((? = 1 AND `emp_num` IS NULL) OR (`emp_num` = ?)) AND ((? = 1"& _ 
-                " AND `emp_lname` IS NULL) OR (`emp_lname` = ?)) AND ((? = 1 AND `emp_fname` IS N"& _ 
-                "ULL) OR (`emp_fname` = ?)) AND ((? = 1 AND `emp_mname` IS NULL) OR (`emp_mname` "& _ 
-                "= ?)) AND ((? = 1 AND `emp_position` IS NULL) OR (`emp_position` = ?)) AND ((? ="& _ 
-                " 1 AND `dept_id` IS NULL) OR (`dept_id` = ?)) AND ((? = 1 AND `emp_address` IS N"& _ 
-                "ULL) OR (`emp_address` = ?)) AND ((? = 1 AND `emp_gender` IS NULL) OR (`emp_gend"& _ 
-                "er` = ?)) AND ((? = 1 AND `emp_bday` IS NULL) OR (`emp_bday` = ?)) AND ((? = 1 A"& _ 
-                "ND `emp_religion` IS NULL) OR (`emp_religion` = ?)) AND ((? = 1 AND `emp_educ` I"& _ 
-                "S NULL) OR (`emp_educ` = ?)) AND ((? = 1 AND `emp_mobile` IS NULL) OR (`emp_mobi"& _ 
-                "le` = ?)) AND ((? = 1 AND `emp_sss` IS NULL) OR (`emp_sss` = ?)) AND ((? = 1 AND"& _ 
-                " `emp_phealth` IS NULL) OR (`emp_phealth` = ?)) AND ((? = 1 AND `emp_tin` IS NUL"& _ 
-                "L) OR (`emp_tin` = ?)) AND ((? = 1 AND `emp_resign` IS NULL) OR (`emp_resign` = "& _ 
-                "?)))"
+                " ?, `emp_phealth` = ?, `emp_pagibig` = ?, `emp_tin` = ?, `emp_photo` = ?, `emp_r"& _ 
+                "esign` = ? WHERE ((`emp_id` = ?) AND ((? = 1 AND `emp_num` IS NULL) OR (`emp_num"& _ 
+                "` = ?)) AND ((? = 1 AND `emp_lname` IS NULL) OR (`emp_lname` = ?)) AND ((? = 1 A"& _ 
+                "ND `emp_fname` IS NULL) OR (`emp_fname` = ?)) AND ((? = 1 AND `emp_mname` IS NUL"& _ 
+                "L) OR (`emp_mname` = ?)) AND ((? = 1 AND `emp_position` IS NULL) OR (`emp_positi"& _ 
+                "on` = ?)) AND ((? = 1 AND `dept_id` IS NULL) OR (`dept_id` = ?)) AND ((? = 1 AND"& _ 
+                " `emp_address` IS NULL) OR (`emp_address` = ?)) AND ((? = 1 AND `emp_gender` IS "& _ 
+                "NULL) OR (`emp_gender` = ?)) AND ((? = 1 AND `emp_bday` IS NULL) OR (`emp_bday` "& _ 
+                "= ?)) AND ((? = 1 AND `emp_religion` IS NULL) OR (`emp_religion` = ?)) AND ((? ="& _ 
+                " 1 AND `emp_educ` IS NULL) OR (`emp_educ` = ?)) AND ((? = 1 AND `emp_mobile` IS "& _ 
+                "NULL) OR (`emp_mobile` = ?)) AND ((? = 1 AND `emp_sss` IS NULL) OR (`emp_sss` = "& _ 
+                "?)) AND ((? = 1 AND `emp_phealth` IS NULL) OR (`emp_phealth` = ?)) AND ((? = 1 A"& _ 
+                "ND `emp_pagibig` IS NULL) OR (`emp_pagibig` = ?)) AND ((? = 1 AND `emp_tin` IS N"& _ 
+                "ULL) OR (`emp_tin` = ?)) AND ((? = 1 AND `emp_resign` IS NULL) OR (`emp_resign` "& _ 
+                "= ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_num", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_num", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_lname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_lname", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -3749,6 +3802,7 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_mobile", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_mobile", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_sss", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_sss", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_phealth", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_phealth", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_pagibig", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_pagibig", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_tin", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_tin", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_photo", Global.System.Data.OleDb.OleDbType.LongVarBinary, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_photo", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("emp_resign", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_resign", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -3781,6 +3835,8 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_sss", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_sss", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_phealth", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_phealth", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_phealth", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_phealth", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_pagibig", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_pagibig", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_pagibig", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_pagibig", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_tin", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_tin", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_emp_tin", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_tin", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_emp_resign", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "emp_resign", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -3802,7 +3858,7 @@ Namespace AlnorEmpDataSetTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT emp_id, emp_num, emp_lname, emp_fname, emp_mname, emp_position, dept_id, e"& _ 
                 "mp_address, emp_gender, emp_bday, emp_religion, emp_educ, emp_mobile, emp_sss, e"& _ 
-                "mp_phealth, emp_tin, emp_photo, emp_resign FROM Employee"
+                "mp_phealth, emp_pagibig, emp_tin, emp_photo, emp_resign FROM Employee"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -3878,6 +3934,7 @@ Namespace AlnorEmpDataSetTableAdapters
                     ByVal Original_emp_mobile As String,  _
                     ByVal Original_emp_sss As String,  _
                     ByVal Original_emp_phealth As String,  _
+                    ByVal Original_emp_pagibig As String,  _
                     ByVal Original_emp_tin As String,  _
                     ByVal Original_emp_resign As Boolean) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_emp_id,Integer)
@@ -3979,15 +4036,22 @@ Namespace AlnorEmpDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_emp_phealth,String)
             End If
-            If (Original_emp_tin Is Nothing) Then
+            If (Original_emp_pagibig Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(29).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(30).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_emp_tin,String)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_emp_pagibig,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_emp_resign,Boolean)
+            If (Original_emp_tin Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_emp_tin,String)
+            End If
+            Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_emp_resign,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4022,6 +4086,7 @@ Namespace AlnorEmpDataSetTableAdapters
                     ByVal emp_mobile As String,  _
                     ByVal emp_sss As String,  _
                     ByVal emp_phealth As String,  _
+                    ByVal emp_pagibig As String,  _
                     ByVal emp_tin As String,  _
                     ByVal emp_photo() As Byte,  _
                     ByVal emp_resign As Boolean) As Integer
@@ -4095,17 +4160,22 @@ Namespace AlnorEmpDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(13).Value = CType(emp_phealth,String)
             End If
-            If (emp_tin Is Nothing) Then
+            If (emp_pagibig Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(14).Value = CType(emp_tin,String)
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(emp_pagibig,String)
             End If
-            If (emp_photo Is Nothing) Then
+            If (emp_tin Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(15).Value = CType(emp_photo,Byte())
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(emp_tin,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(16).Value = CType(emp_resign,Boolean)
+            If (emp_photo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(16).Value = CType(emp_photo,Byte())
+            End If
+            Me.Adapter.InsertCommand.Parameters(17).Value = CType(emp_resign,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4140,6 +4210,7 @@ Namespace AlnorEmpDataSetTableAdapters
                     ByVal emp_mobile As String,  _
                     ByVal emp_sss As String,  _
                     ByVal emp_phealth As String,  _
+                    ByVal emp_pagibig As String,  _
                     ByVal emp_tin As String,  _
                     ByVal emp_photo() As Byte,  _
                     ByVal emp_resign As Boolean,  _
@@ -4158,6 +4229,7 @@ Namespace AlnorEmpDataSetTableAdapters
                     ByVal Original_emp_mobile As String,  _
                     ByVal Original_emp_sss As String,  _
                     ByVal Original_emp_phealth As String,  _
+                    ByVal Original_emp_pagibig As String,  _
                     ByVal Original_emp_tin As String,  _
                     ByVal Original_emp_resign As Boolean) As Integer
             If (emp_num Is Nothing) Then
@@ -4230,125 +4302,137 @@ Namespace AlnorEmpDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = CType(emp_phealth,String)
             End If
-            If (emp_tin Is Nothing) Then
+            If (emp_pagibig Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(emp_tin,String)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(emp_pagibig,String)
             End If
-            If (emp_photo Is Nothing) Then
+            If (emp_tin Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(emp_photo,Byte())
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(emp_tin,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(emp_resign,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_emp_id,Integer)
-            If (Original_emp_num Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            If (emp_photo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_emp_num,String)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(emp_photo,Byte())
+            End If
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(emp_resign,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_emp_id,Integer)
+            If (Original_emp_num Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_emp_num,String)
             End If
             If (Original_emp_lname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_emp_lname,String)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_emp_lname,String)
             End If
             If (Original_emp_fname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_emp_fname,String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_emp_fname,String)
             End If
             If (Original_emp_mname Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_emp_mname,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_emp_mname,String)
             End If
             If (Original_emp_position Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_emp_position,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_emp_position,String)
             End If
             If (Original_dept_id.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_dept_id.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_dept_id.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
             End If
             If (Original_emp_address Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_emp_address,String)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_emp_address,String)
             End If
             If (Original_emp_gender Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_emp_gender,String)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_emp_gender,String)
             End If
             If (Original_emp_bday Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_emp_bday,String)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_emp_bday,String)
             End If
             If (Original_emp_religion Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_emp_religion,String)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_emp_religion,String)
             End If
             If (Original_emp_educ Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_emp_educ,String)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_emp_educ,String)
             End If
             If (Original_emp_mobile Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_emp_mobile,String)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_emp_mobile,String)
             End If
             If (Original_emp_sss Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_emp_sss,String)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_emp_sss,String)
             End If
             If (Original_emp_phealth Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_emp_phealth,String)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_emp_phealth,String)
+            End If
+            If (Original_emp_pagibig Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_emp_pagibig,String)
             End If
             If (Original_emp_tin Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_emp_tin,String)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_emp_tin,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_emp_resign,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_emp_resign,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
