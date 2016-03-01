@@ -5,6 +5,8 @@
         Me.EmployeeBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.AlnorEmpDataSet)
         MsgBox("Record Saved!", MsgBoxStyle.OkOnly)
+        EmployeeBindingSource.RemoveFilter()
+        'UltraCombo1.Value = ""
     End Sub
 
     Private Sub Employees_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -13,7 +15,6 @@
         'TODO: This line of code loads data into the 'AlnorEmpDataSet.Employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.Fill(Me.AlnorEmpDataSet.Employee)
         ComboBox1.SelectedValue = Dept_idLabel1.Text
-
         Emp_bdayDateTimePicker.Format = DateTimePickerFormat.Custom
         Emp_bdayDateTimePicker.CustomFormat = "ddd','MMM'/'dd'/'yyyy"
     End Sub
@@ -39,5 +40,19 @@
 
     Private Sub Employees_MouseMove(sender As Object, e As EventArgs) Handles Me.MouseMove
         Emp_bdayLabel2.Text = Emp_bdayDateTimePicker.Text
+        'Emp_idLabel1.Text = UltraCombo1.Value
+    End Sub
+
+    Private Sub UltraCombo1_ValueChanged(sender As Object, e As EventArgs) Handles UltraCombo1.ValueChanged
+        Emp_idLabel1.Text = UltraCombo1.Value
+
+        If Emp_idLabel1.Text IsNot "" Then
+            EmployeeBindingSource.Filter = "emp_id = " & Emp_idLabel1.Text & ""
+        End If
+    End Sub
+
+    Private Sub UltraButton2_Click(sender As Object, e As EventArgs) Handles UltraButton2.Click
+        EmployeeBindingSource.RemoveFilter()
+        UltraCombo1.Value = ""
     End Sub
 End Class

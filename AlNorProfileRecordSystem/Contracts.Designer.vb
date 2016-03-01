@@ -523,6 +523,7 @@ Partial Class Contracts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Tan
         Me.ClientSize = New System.Drawing.Size(521, 515)
         Me.Controls.Add(Me.ContractsDataGridView)
         Me.Controls.Add(Me.Label3)
