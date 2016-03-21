@@ -568,8 +568,7 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columncon_ends)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncon_ID}, true))
             Me.columncon_ID.AutoIncrement = true
-            Me.columncon_ID.AutoIncrementSeed = -1
-            Me.columncon_ID.AutoIncrementStep = -1
+            Me.columncon_ID.AutoIncrementSeed = 1
             Me.columncon_ID.AllowDBNull = false
             Me.columncon_ID.Unique = true
             Me.columncon_starts.MaxLength = 255
@@ -847,8 +846,7 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columndept_name)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columndept_id}, true))
             Me.columndept_id.AutoIncrement = true
-            Me.columndept_id.AutoIncrementSeed = -1
-            Me.columndept_id.AutoIncrementStep = -1
+            Me.columndept_id.AutoIncrementSeed = 1
             Me.columndept_id.AllowDBNull = false
             Me.columndept_id.Unique = true
             Me.columndept_name.MaxLength = 255
@@ -1367,8 +1365,7 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columnemp_resign)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnemp_id}, true))
             Me.columnemp_id.AutoIncrement = true
-            Me.columnemp_id.AutoIncrementSeed = -1
-            Me.columnemp_id.AutoIncrementStep = -1
+            Me.columnemp_id.AutoIncrementSeed = 1
             Me.columnemp_id.AllowDBNull = false
             Me.columnemp_id.Unique = true
             Me.columnemp_num.MaxLength = 255
@@ -1701,8 +1698,7 @@ Partial Public Class AlnorEmpDataSet
             MyBase.Columns.Add(Me.columninf_remarks)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columninf_ID}, true))
             Me.columninf_ID.AutoIncrement = true
-            Me.columninf_ID.AutoIncrementSeed = -1
-            Me.columninf_ID.AutoIncrementStep = -1
+            Me.columninf_ID.AutoIncrementSeed = 1
             Me.columninf_ID.AllowDBNull = false
             Me.columninf_ID.Unique = true
             Me.columninf_description.MaxLength = 255

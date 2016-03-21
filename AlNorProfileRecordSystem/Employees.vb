@@ -6,7 +6,7 @@
         Me.TableAdapterManager.UpdateAll(Me.AlnorEmpDataSet)
         MsgBox("Record Saved!", MsgBoxStyle.OkOnly)
         EmployeeBindingSource.RemoveFilter()
-        'UltraCombo1.Value = ""
+        UltraCombo1.Enabled = True
     End Sub
 
     Private Sub Employees_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -54,5 +54,9 @@
     Private Sub UltraButton2_Click(sender As Object, e As EventArgs) Handles UltraButton2.Click
         EmployeeBindingSource.RemoveFilter()
         UltraCombo1.Value = ""
+    End Sub
+
+    Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
+        UltraCombo1.Enabled = False
     End Sub
 End Class

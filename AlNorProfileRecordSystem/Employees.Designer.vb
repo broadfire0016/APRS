@@ -38,41 +38,42 @@ Partial Class Employees
         Dim Emp_sssLabel As System.Windows.Forms.Label
         Dim Emp_phealthLabel As System.Windows.Forms.Label
         Dim Emp_tinLabel As System.Windows.Forms.Label
+        Dim Emp_pagibigLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Employees))
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Employee", -1)
-        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
-        Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_num")
-        Dim UltraGridColumn32 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_lname")
-        Dim UltraGridColumn33 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_fname")
-        Dim UltraGridColumn34 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_mname")
-        Dim UltraGridColumn35 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_position")
-        Dim UltraGridColumn36 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("dept_id")
-        Dim UltraGridColumn37 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_address")
-        Dim UltraGridColumn38 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_gender")
-        Dim UltraGridColumn39 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_bday")
-        Dim UltraGridColumn40 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_religion")
-        Dim UltraGridColumn41 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_educ")
-        Dim UltraGridColumn42 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_mobile")
-        Dim UltraGridColumn43 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_sss")
-        Dim UltraGridColumn44 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_phealth")
-        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_pagibig")
-        Dim UltraGridColumn45 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_tin")
-        Dim UltraGridColumn46 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_photo")
-        Dim UltraGridColumn47 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_resign")
-        Dim UltraGridColumn48 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("EmployeeContracts")
-        Dim UltraGridColumn49 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("EmployeeInfractions")
+        Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
+        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_num")
+        Dim UltraGridColumn4 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_lname")
+        Dim UltraGridColumn5 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_fname")
+        Dim UltraGridColumn6 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_mname")
+        Dim UltraGridColumn7 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_position")
+        Dim UltraGridColumn8 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("dept_id")
+        Dim UltraGridColumn9 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_address")
+        Dim UltraGridColumn10 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_gender")
+        Dim UltraGridColumn11 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_bday")
+        Dim UltraGridColumn12 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_religion")
+        Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_educ")
+        Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_mobile")
+        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_sss")
+        Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_phealth")
+        Dim UltraGridColumn17 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_pagibig")
+        Dim UltraGridColumn18 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_tin")
+        Dim UltraGridColumn19 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_photo")
+        Dim UltraGridColumn20 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_resign")
+        Dim UltraGridColumn21 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("EmployeeContracts")
+        Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("EmployeeInfractions")
         Dim UltraGridBand2 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("EmployeeContracts", 0)
-        Dim UltraGridColumn50 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_ID")
-        Dim UltraGridColumn51 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
-        Dim UltraGridColumn52 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_starts")
-        Dim UltraGridColumn53 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_ends")
+        Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_ID")
+        Dim UltraGridColumn24 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
+        Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_starts")
+        Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("con_ends")
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("EmployeeInfractions", 0)
-        Dim UltraGridColumn54 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_ID")
-        Dim UltraGridColumn55 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
-        Dim UltraGridColumn56 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_description")
-        Dim UltraGridColumn57 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_date")
-        Dim UltraGridColumn58 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_remarks")
+        Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_ID")
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("emp_id")
+        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_description")
+        Dim UltraGridColumn59 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_date")
+        Dim UltraGridColumn60 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("inf_remarks")
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -84,7 +85,6 @@ Partial Class Employees
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Emp_pagibigLabel As System.Windows.Forms.Label
         Me.AlnorEmpDataSet = New AlNorProfileRecordSystem.AlnorEmpDataSet()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeTableAdapter = New AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.EmployeeTableAdapter()
@@ -119,6 +119,7 @@ Partial Class Employees
         Me.Emp_bdayDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Emp_photoPictureBox = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Emp_pagibigTextBox = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DepartmentBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Dept_idLabel1 = New System.Windows.Forms.Label()
@@ -130,7 +131,6 @@ Partial Class Employees
         Me.UltraCombo1 = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Emp_idLabel1 = New System.Windows.Forms.Label()
-        Me.Emp_pagibigTextBox = New System.Windows.Forms.TextBox()
         Emp_numLabel = New System.Windows.Forms.Label()
         Emp_lnameLabel = New System.Windows.Forms.Label()
         Emp_fnameLabel = New System.Windows.Forms.Label()
@@ -294,6 +294,15 @@ Partial Class Employees
         Emp_tinLabel.TabIndex = 31
         Emp_tinLabel.Text = "TIN:"
         '
+        'Emp_pagibigLabel
+        '
+        Emp_pagibigLabel.AutoSize = True
+        Emp_pagibigLabel.Location = New System.Drawing.Point(394, 281)
+        Emp_pagibigLabel.Name = "Emp_pagibigLabel"
+        Emp_pagibigLabel.Size = New System.Drawing.Size(56, 13)
+        Emp_pagibigLabel.TabIndex = 40
+        Emp_pagibigLabel.Text = "PAG-IBIG:"
+        '
         'AlnorEmpDataSet
         '
         Me.AlnorEmpDataSet.DataSetName = "AlnorEmpDataSet"
@@ -360,6 +369,7 @@ Partial Class Employees
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorDeleteItem.Visible = False
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -560,6 +570,7 @@ Partial Class Employees
         Me.Emp_photoPictureBox.Location = New System.Drawing.Point(392, 75)
         Me.Emp_photoPictureBox.Name = "Emp_photoPictureBox"
         Me.Emp_photoPictureBox.Size = New System.Drawing.Size(140, 136)
+        Me.Emp_photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Emp_photoPictureBox.TabIndex = 39
         Me.Emp_photoPictureBox.TabStop = False
         '
@@ -605,6 +616,14 @@ Partial Class Employees
         Me.GroupBox1.TabIndex = 40
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Details"
+        '
+        'Emp_pagibigTextBox
+        '
+        Me.Emp_pagibigTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "emp_pagibig", True))
+        Me.Emp_pagibigTextBox.Location = New System.Drawing.Point(397, 297)
+        Me.Emp_pagibigTextBox.Name = "Emp_pagibigTextBox"
+        Me.Emp_pagibigTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.Emp_pagibigTextBox.TabIndex = 41
         '
         'ComboBox1
         '
@@ -678,57 +697,57 @@ Partial Class Employees
         Appearance1.BackColor = System.Drawing.SystemColors.Window
         Appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption
         Me.UltraCombo1.DisplayLayout.Appearance = Appearance1
-        UltraGridColumn30.Header.VisiblePosition = 0
-        UltraGridColumn30.Hidden = True
-        UltraGridColumn31.Header.Caption = "Employee Number"
-        UltraGridColumn31.Header.VisiblePosition = 1
-        UltraGridColumn32.Header.Caption = "Surname"
-        UltraGridColumn32.Header.VisiblePosition = 2
-        UltraGridColumn33.Header.Caption = "Firstname"
-        UltraGridColumn33.Header.VisiblePosition = 3
-        UltraGridColumn34.Header.Caption = "Middlename"
-        UltraGridColumn34.Header.VisiblePosition = 4
-        UltraGridColumn35.Header.Caption = "Position"
-        UltraGridColumn35.Header.VisiblePosition = 5
-        UltraGridColumn36.Header.VisiblePosition = 6
-        UltraGridColumn36.Hidden = True
-        UltraGridColumn37.Header.VisiblePosition = 7
-        UltraGridColumn37.Hidden = True
-        UltraGridColumn38.Header.VisiblePosition = 8
-        UltraGridColumn38.Hidden = True
-        UltraGridColumn39.Header.VisiblePosition = 9
-        UltraGridColumn39.Hidden = True
-        UltraGridColumn40.Header.VisiblePosition = 10
-        UltraGridColumn40.Hidden = True
-        UltraGridColumn41.Header.VisiblePosition = 11
-        UltraGridColumn41.Hidden = True
-        UltraGridColumn42.Header.VisiblePosition = 12
-        UltraGridColumn42.Hidden = True
-        UltraGridColumn43.Header.VisiblePosition = 13
-        UltraGridColumn43.Hidden = True
-        UltraGridColumn44.Header.VisiblePosition = 14
-        UltraGridColumn44.Hidden = True
-        UltraGridColumn1.Header.VisiblePosition = 15
-        UltraGridColumn45.Header.VisiblePosition = 16
-        UltraGridColumn45.Hidden = True
-        UltraGridColumn46.Header.VisiblePosition = 17
-        UltraGridColumn46.Hidden = True
-        UltraGridColumn47.Header.VisiblePosition = 18
-        UltraGridColumn47.Hidden = True
-        UltraGridColumn48.Header.VisiblePosition = 19
-        UltraGridColumn49.Header.VisiblePosition = 20
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn1, UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49})
-        UltraGridColumn50.Header.VisiblePosition = 0
-        UltraGridColumn51.Header.VisiblePosition = 1
-        UltraGridColumn52.Header.VisiblePosition = 2
-        UltraGridColumn53.Header.VisiblePosition = 3
-        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53})
-        UltraGridColumn54.Header.VisiblePosition = 0
-        UltraGridColumn55.Header.VisiblePosition = 1
-        UltraGridColumn56.Header.VisiblePosition = 2
-        UltraGridColumn57.Header.VisiblePosition = 3
-        UltraGridColumn58.Header.VisiblePosition = 4
-        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn54, UltraGridColumn55, UltraGridColumn56, UltraGridColumn57, UltraGridColumn58})
+        UltraGridColumn2.Header.VisiblePosition = 0
+        UltraGridColumn2.Hidden = True
+        UltraGridColumn3.Header.Caption = "Employee Number"
+        UltraGridColumn3.Header.VisiblePosition = 1
+        UltraGridColumn4.Header.Caption = "Surname"
+        UltraGridColumn4.Header.VisiblePosition = 2
+        UltraGridColumn5.Header.Caption = "Firstname"
+        UltraGridColumn5.Header.VisiblePosition = 3
+        UltraGridColumn6.Header.Caption = "Middlename"
+        UltraGridColumn6.Header.VisiblePosition = 4
+        UltraGridColumn7.Header.Caption = "Position"
+        UltraGridColumn7.Header.VisiblePosition = 5
+        UltraGridColumn8.Header.VisiblePosition = 6
+        UltraGridColumn8.Hidden = True
+        UltraGridColumn9.Header.VisiblePosition = 7
+        UltraGridColumn9.Hidden = True
+        UltraGridColumn10.Header.VisiblePosition = 8
+        UltraGridColumn10.Hidden = True
+        UltraGridColumn11.Header.VisiblePosition = 9
+        UltraGridColumn11.Hidden = True
+        UltraGridColumn12.Header.VisiblePosition = 10
+        UltraGridColumn12.Hidden = True
+        UltraGridColumn13.Header.VisiblePosition = 11
+        UltraGridColumn13.Hidden = True
+        UltraGridColumn14.Header.VisiblePosition = 12
+        UltraGridColumn14.Hidden = True
+        UltraGridColumn15.Header.VisiblePosition = 13
+        UltraGridColumn15.Hidden = True
+        UltraGridColumn16.Header.VisiblePosition = 14
+        UltraGridColumn16.Hidden = True
+        UltraGridColumn17.Header.VisiblePosition = 15
+        UltraGridColumn18.Header.VisiblePosition = 16
+        UltraGridColumn18.Hidden = True
+        UltraGridColumn19.Header.VisiblePosition = 17
+        UltraGridColumn19.Hidden = True
+        UltraGridColumn20.Header.VisiblePosition = 18
+        UltraGridColumn20.Hidden = True
+        UltraGridColumn21.Header.VisiblePosition = 19
+        UltraGridColumn22.Header.VisiblePosition = 20
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22})
+        UltraGridColumn23.Header.VisiblePosition = 0
+        UltraGridColumn24.Header.VisiblePosition = 1
+        UltraGridColumn25.Header.VisiblePosition = 2
+        UltraGridColumn26.Header.VisiblePosition = 3
+        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26})
+        UltraGridColumn27.Header.VisiblePosition = 0
+        UltraGridColumn28.Header.VisiblePosition = 1
+        UltraGridColumn29.Header.VisiblePosition = 2
+        UltraGridColumn59.Header.VisiblePosition = 3
+        UltraGridColumn60.Header.VisiblePosition = 4
+        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn59, UltraGridColumn60})
         Me.UltraCombo1.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.UltraCombo1.DisplayLayout.BandsSerializer.Add(UltraGridBand2)
         Me.UltraCombo1.DisplayLayout.BandsSerializer.Add(UltraGridBand3)
@@ -806,23 +825,6 @@ Partial Class Employees
         Me.Emp_idLabel1.Size = New System.Drawing.Size(100, 23)
         Me.Emp_idLabel1.TabIndex = 44
         Me.Emp_idLabel1.Text = "Label1"
-        '
-        'Emp_pagibigLabel
-        '
-        Emp_pagibigLabel.AutoSize = True
-        Emp_pagibigLabel.Location = New System.Drawing.Point(394, 281)
-        Emp_pagibigLabel.Name = "Emp_pagibigLabel"
-        Emp_pagibigLabel.Size = New System.Drawing.Size(56, 13)
-        Emp_pagibigLabel.TabIndex = 40
-        Emp_pagibigLabel.Text = "PAG-IBIG:"
-        '
-        'Emp_pagibigTextBox
-        '
-        Me.Emp_pagibigTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "emp_pagibig", True))
-        Me.Emp_pagibigTextBox.Location = New System.Drawing.Point(397, 297)
-        Me.Emp_pagibigTextBox.Name = "Emp_pagibigTextBox"
-        Me.Emp_pagibigTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.Emp_pagibigTextBox.TabIndex = 41
         '
         'Employees
         '
