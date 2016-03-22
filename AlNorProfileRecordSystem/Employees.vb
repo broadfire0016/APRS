@@ -1,6 +1,7 @@
 ﻿Public Class Employees
     Dim selectedValue
     Private Sub EmployeeBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles EmployeeBindingNavigatorSaveItem.Click
+        'Emp_idLabel1.Text = Emp_idLabel2.Text
         Me.Validate()
         Me.EmployeeBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.AlnorEmpDataSet)
@@ -17,6 +18,7 @@
         ComboBox1.SelectedValue = Dept_idLabel1.Text
         Emp_bdayDateTimePicker.Format = DateTimePickerFormat.Custom
         Emp_bdayDateTimePicker.CustomFormat = "ddd','MMM'/'dd'/'yyyy"
+        UltraPictureBox1.DataBindings.Add("Image", EmployeeBindingSource, "emp_photo")
     End Sub
 
     Private Sub UltraButton1_Click(sender As Object, e As EventArgs) Handles UltraButton1.Click
@@ -24,7 +26,7 @@
         dialog.Title = "Browse Picture"
         dialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG"
         If dialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            Emp_photoPictureBox.Image = Image.FromFile(dialog.FileName)
+            UltraPictureBox1.Image = Image.FromFile(dialog.FileName)
         End If
     End Sub
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged

@@ -117,7 +117,6 @@ Partial Class Employees
         Me.Emp_resignCheckBox = New System.Windows.Forms.CheckBox()
         Me.Emp_genderComboBox = New System.Windows.Forms.ComboBox()
         Me.Emp_bdayDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Emp_photoPictureBox = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Emp_pagibigTextBox = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -131,6 +130,7 @@ Partial Class Employees
         Me.UltraCombo1 = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Emp_idLabel1 = New System.Windows.Forms.Label()
+        Me.UltraPictureBox1 = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Emp_numLabel = New System.Windows.Forms.Label()
         Emp_lnameLabel = New System.Windows.Forms.Label()
         Emp_fnameLabel = New System.Windows.Forms.Label()
@@ -151,7 +151,6 @@ Partial Class Employees
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EmployeeBindingNavigator.SuspendLayout()
-        CType(Me.Emp_photoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DepartmentBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -325,7 +324,7 @@ Partial Class Employees
         Me.TableAdapterManager.DepartmentTableAdapter = Nothing
         Me.TableAdapterManager.EmployeeTableAdapter = Me.EmployeeTableAdapter
         Me.TableAdapterManager.InfractionsTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.UpdateOrder = AlNorProfileRecordSystem.AlnorEmpDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.UpdateInsertDelete
         '
         'EmployeeBindingNavigator
         '
@@ -563,17 +562,6 @@ Partial Class Employees
         Me.Emp_bdayDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.Emp_bdayDateTimePicker.TabIndex = 38
         '
-        'Emp_photoPictureBox
-        '
-        Me.Emp_photoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Emp_photoPictureBox.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.EmployeeBindingSource, "emp_photo", True))
-        Me.Emp_photoPictureBox.Location = New System.Drawing.Point(392, 75)
-        Me.Emp_photoPictureBox.Name = "Emp_photoPictureBox"
-        Me.Emp_photoPictureBox.Size = New System.Drawing.Size(140, 136)
-        Me.Emp_photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Emp_photoPictureBox.TabIndex = 39
-        Me.Emp_photoPictureBox.TabStop = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Emp_pagibigLabel)
@@ -609,7 +597,6 @@ Partial Class Employees
         Me.GroupBox1.Controls.Add(Emp_genderLabel)
         Me.GroupBox1.Controls.Add(Me.Emp_addressTextBox)
         Me.GroupBox1.Controls.Add(Emp_addressLabel)
-        Me.GroupBox1.Controls.Add(Me.Dept_idLabel1)
         Me.GroupBox1.Location = New System.Drawing.Point(26, 217)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(559, 371)
@@ -631,7 +618,7 @@ Partial Class Employees
         Me.ComboBox1.DisplayMember = "dept_name"
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(134, 125)
+        Me.ComboBox1.Location = New System.Drawing.Point(136, 121)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(141, 21)
         Me.ComboBox1.TabIndex = 39
@@ -645,7 +632,7 @@ Partial Class Employees
         'Dept_idLabel1
         '
         Me.Dept_idLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "dept_id", True))
-        Me.Dept_idLabel1.Location = New System.Drawing.Point(133, 123)
+        Me.Dept_idLabel1.Location = New System.Drawing.Point(159, 246)
         Me.Dept_idLabel1.Name = "Dept_idLabel1"
         Me.Dept_idLabel1.Size = New System.Drawing.Size(100, 23)
         Me.Dept_idLabel1.TabIndex = 40
@@ -653,7 +640,7 @@ Partial Class Employees
         '
         'UltraButton1
         '
-        Me.UltraButton1.Location = New System.Drawing.Point(291, 111)
+        Me.UltraButton1.Location = New System.Drawing.Point(327, 99)
         Me.UltraButton1.Name = "UltraButton1"
         Me.UltraButton1.Size = New System.Drawing.Size(75, 63)
         Me.UltraButton1.TabIndex = 41
@@ -805,7 +792,7 @@ Partial Class Employees
         Me.UltraCombo1.DisplayMember = "emp_num"
         Me.UltraCombo1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2013
         Me.UltraCombo1.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList
-        Me.UltraCombo1.Location = New System.Drawing.Point(13, 47)
+        Me.UltraCombo1.Location = New System.Drawing.Point(12, 36)
         Me.UltraCombo1.Name = "UltraCombo1"
         Me.UltraCombo1.Size = New System.Drawing.Size(174, 22)
         Me.UltraCombo1.TabIndex = 0
@@ -820,11 +807,21 @@ Partial Class Employees
         'Emp_idLabel1
         '
         Me.Emp_idLabel1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "emp_id", True))
-        Me.Emp_idLabel1.Location = New System.Drawing.Point(159, 227)
+        Me.Emp_idLabel1.Location = New System.Drawing.Point(420, 236)
         Me.Emp_idLabel1.Name = "Emp_idLabel1"
         Me.Emp_idLabel1.Size = New System.Drawing.Size(100, 23)
         Me.Emp_idLabel1.TabIndex = 44
         Me.Emp_idLabel1.Text = "Label1"
+        '
+        'UltraPictureBox1
+        '
+        Me.UltraPictureBox1.BorderShadowColor = System.Drawing.Color.Empty
+        Me.UltraPictureBox1.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.UltraPictureBox1.Image = CType(resources.GetObject("UltraPictureBox1.Image"), Object)
+        Me.UltraPictureBox1.Location = New System.Drawing.Point(423, 53)
+        Me.UltraPictureBox1.Name = "UltraPictureBox1"
+        Me.UltraPictureBox1.Size = New System.Drawing.Size(162, 147)
+        Me.UltraPictureBox1.TabIndex = 45
         '
         'Employees
         '
@@ -833,12 +830,13 @@ Partial Class Employees
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.BurlyWood
         Me.ClientSize = New System.Drawing.Size(604, 608)
+        Me.Controls.Add(Me.UltraPictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.UltraButton1)
-        Me.Controls.Add(Me.Emp_photoPictureBox)
         Me.Controls.Add(Me.EmployeeBindingNavigator)
         Me.Controls.Add(Me.Emp_bdayLabel2)
+        Me.Controls.Add(Me.Dept_idLabel1)
         Me.Controls.Add(Me.Emp_idLabel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -851,7 +849,6 @@ Partial Class Employees
         CType(Me.EmployeeBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EmployeeBindingNavigator.ResumeLayout(False)
         Me.EmployeeBindingNavigator.PerformLayout()
-        CType(Me.Emp_photoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DepartmentBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -896,7 +893,6 @@ Partial Class Employees
     Friend WithEvents Emp_resignCheckBox As CheckBox
     Friend WithEvents Emp_genderComboBox As ComboBox
     Friend WithEvents Emp_bdayDateTimePicker As DateTimePicker
-    Friend WithEvents Emp_photoPictureBox As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents UltraButton1 As Infragistics.Win.Misc.UltraButton
     Friend WithEvents ComboBox1 As ComboBox
@@ -910,4 +906,5 @@ Partial Class Employees
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents Emp_idLabel1 As Label
     Friend WithEvents Emp_pagibigTextBox As TextBox
+    Friend WithEvents UltraPictureBox1 As Infragistics.Win.UltraWinEditors.UltraPictureBox
 End Class
